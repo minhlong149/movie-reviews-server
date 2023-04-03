@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
 
 import MoviesDAO from "./dao/moviesDAO.js";
+import ReviewsDAO from "./dao/reviewsDAO.js";
 import app from "./server.js";
 
 dotenv.config();
@@ -15,7 +16,8 @@ const client = new MongoClient(uri);
     await client.connect();
     console.log("Connected to MongoDB");
 
-    MoviesDAO.injectDB(client);
+    await MoviesDAO.injectDB(client);
+    await ReviewsDAO.injectDB(client);
 
     app.listen(port, () => {
       console.log(`Server is listening on port ${port}`);

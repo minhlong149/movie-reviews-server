@@ -3,3 +3,43 @@ GET http://localhost:3000/api/v1/movies/
 ###
 
 GET http://localhost:3000/api/v1/movies?rated=G
+
+###
+
+POST http://localhost:3000/api/v1/movies/review
+Content-Type: application/json
+
+{
+  "movie_id": "573a1390f29313caabcd446f",
+  "review": "great movie",
+  "user_id": "ie213",
+  "name": "ktpthtweb"
+}
+
+###
+PUT http://localhost:3000/api/v1/movies/review
+Content-Type: application/json
+
+{
+  "review_id": "641c379d1d00c38cf687e3cb",
+  "review": "bad movie",
+  "user_id": "ie213",
+  "name": "ktpthtweb"
+}
+
+###
+DELETE  http://localhost:3000/api/v1/movies/review
+Content-Type: application/json
+
+{
+  "review_id": "641c3c268c07ab6cde76515c",
+  "user_id": "ie213"
+}
+
+###
+
+GET http://localhost:3000/api/v1/movies/ratings
+
+###
+
+GET http://localhost:3000/api/v1/movies/id/573a1390f29313caabcd446f
